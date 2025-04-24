@@ -353,7 +353,7 @@ const ProductDetail = () => {
             <button
               className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
               onClick={() => {
-                if (confirm("Are you sure want to delete this product ? ")) {
+                if (confirm("Are you sure want to delete this product... ")) {
                   deleteProductMutation.mutate();
                 }
               }}
