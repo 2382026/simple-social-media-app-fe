@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import axios from "../../utils/AxiosInstance";
 import { Playlist } from "../../types/Playlist";
-import { moodOptions } from "../songs/SongList";
 
 const PlaylistList = () => {
   const { data: playlists, isLoading } = useQuery<Playlist[]>({

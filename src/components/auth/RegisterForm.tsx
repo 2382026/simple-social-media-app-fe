@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "../../utils/AxiosInstance";
 import { useMutation } from "@tanstack/react-query";
+import toast from 'react-hot-toast'; // Changed from react-toastify to react-hot-toast
 
 export type RegisterInput = {
   email: string;
@@ -24,10 +25,10 @@ const RegisterForm = () => {
         username: data.username,
         password: data.password
       });
-      alert("User successfully registered");
+      toast.success("Registrasi berhasil");
       navigate("/login");
     } catch (err) {
-      alert("Username or email already registered");
+      toast.error("Username atau email sudah terdaftar");
     }
   };
 

@@ -1,16 +1,16 @@
-import CreateSongForm from "../../components/song/CreateSongForm";
+import CreatePlaylistForm from "../../components/playlist/CreatePlaylistForm";
 
-const CreateSongPage = () => {
+const CreatePlaylistPage = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">
-        Tambah Lagu Baru
+        Buat Playlist Baru
       </h1>
       <div className="bg-white p-6 rounded-xl shadow-sm">
-        <CreateSongForm />
+        <CreatePlaylistForm />
       </div>
     </div>
   );
 };
 
-export default CreateSongPage;
+export default CreatePlaylistPage;

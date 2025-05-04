@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/AuthProvider";
 import axios from "../../utils/AxiosInstance";
 import { useMutation } from "@tanstack/react-query";
+import { toast } from 'react-hot-toast'; // Ganti dari react-toastify ke react-hot-toast
 
 export type LoginInput = {
   email: string;
@@ -31,11 +32,10 @@ const LoginForm = () => {
       if (res.data) {
         login(res.data.access_token);
         navigate("/");
-      } else {
-        alert("Username or password is wrong");
+        toast.success("Login berhasil"); // Tambahkan notifikasi sukses
       }
     } catch (err) {
-      alert("Username or password is wrong");
+      toast.error("Email atau password salah");
     }
   };
 

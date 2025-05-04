@@ -6,17 +6,17 @@ import BaseLayout from "./layouts/BaseLayout";
 import PrivateRoute from "./utils/PrivateRoute";
 import PublicRoute from "./utils/PublicRoute";
 import { Toaster } from 'react-hot-toast';
-
-// Pages
-import HomePage from "./pages/Home";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
+import HomePage from "./pages/Home";
 import SongPage from "./pages/song/SongPage";
 import CreateSongPage from "./pages/song/CreateSongPage";
-import EditSongPage from "./pages/song/EditSongPage";
 import SongDetailPage from "./pages/song/SongDetailPage";
+import EditSongPage from "./pages/song/EditSongPage";
 import ProfilePage from "./pages/user/ProfilePage";
 import EditProfilePage from "./pages/user/EditProfilePage";
+import PlaylistPage from "./pages/playlist/PlaylistPage";
+import CreatePlaylistPage from "./pages/playlist/CreatePlaylistPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -83,6 +83,16 @@ const App = () => {
               <Route path="/profile/edit" element={
                 <PrivateRoute>
                   <EditProfilePage />
+                </PrivateRoute>
+              } />
+              <Route path="/playlists" element={
+                <PrivateRoute>
+                  <PlaylistPage />
+                </PrivateRoute>
+              } />
+              <Route path="/playlists/create" element={
+                <PrivateRoute>
+                  <CreatePlaylistPage />
                 </PrivateRoute>
               } />
             </Route>
